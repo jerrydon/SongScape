@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Xtc-gK-bIb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Initial View Controller-->
+        <scene sceneID="Whw-ku-ixV">
+            <objects>
+                <viewController id="Xtc-gK-bIb" customClass="InitialViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ocF-n3-boO"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bc5-Ia-Fw9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i00-gr-ZlY">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="lrP-Z8-4LB" kind="modal" identifier="startApp" id="2nO-yr-dZn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nK9-7u-QFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5357" y="-965"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="NOa-9T-4Kt">
+            <objects>
+                <viewController id="uvs-ki-MGV" customClass="TutorialViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rbD-vF-EJE"/>
+                        <viewControllerLayoutGuide type="bottom" id="Thf-G8-xuL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JQR-LG-r1o">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9MO-Ax-NJh">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <connections>
+                                    <outlet property="delegate" destination="uvs-ki-MGV" id="IqG-y1-iDH"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="vJo-XV-E13">
+                                <rect key="frame" x="484" y="703" width="56" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.12549019610000001" green="0.60784313729999995" blue="0.82745098039999998" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="vJo-XV-E13" firstAttribute="top" secondItem="rbD-vF-EJE" secondAttribute="bottom" constant="683" id="1Y5-GQ-TPc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vJo-XV-E13" secondAttribute="trailing" constant="468" id="1aO-FW-GM5"/>
+                            <constraint firstItem="vJo-XV-E13" firstAttribute="leading" secondItem="JQR-LG-r1o" secondAttribute="leadingMargin" constant="468" id="Adg-Va-1yp"/>
+                            <constraint firstItem="Thf-G8-xuL" firstAttribute="top" secondItem="vJo-XV-E13" secondAttribute="bottom" constant="28" id="Cd2-5s-gVU"/>
+                            <constraint firstAttribute="centerX" secondItem="9MO-Ax-NJh" secondAttribute="centerX" id="k4V-ZQ-ZEd"/>
+                            <constraint firstAttribute="centerY" secondItem="9MO-Ax-NJh" secondAttribute="centerY" id="nYv-kD-rM0"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="pageControl" destination="vJo-XV-E13" id="FD7-Gt-kO3"/>
+                        <outlet property="scrollView" destination="9MO-Ax-NJh" id="RBA-oA-qSO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="laB-QH-def" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5382" y="84"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uox-Og-vEh">
+            <objects>
+                <viewController id="5ZU-d9-s3l" customClass="ViewController" colorLabel="IBBuiltInLabel-Gray" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LOr-J5-Hi8"/>
+                        <viewControllerLayoutGuide type="bottom" id="dmu-gW-h12"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZHi-6w-jrQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fmO-5G-nHG">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jNo-Jn-Tgg">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="We7-cV-V7Z">
+                                <rect key="frame" x="297" y="154" width="430" height="460"/>
+                                <subviews>
+                                    <view alpha="0.79999999999999993" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cV8-jS-XMw">
+                                        <rect key="frame" x="0.0" y="146" width="430" height="224"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Mood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIT-LS-8Gb">
+                                                <rect key="frame" x="0.0" y="0.0" width="430" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Forest" translatesAutoresizingMaskIntoConstraints="NO" id="sCi-ol-fEo">
+                                                <rect key="frame" x="3" y="37" width="210" height="85"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.84999999999999987" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rain" translatesAutoresizingMaskIntoConstraints="NO" id="RGS-p9-QNV">
+                                                <rect key="frame" x="218" y="37" width="210" height="85"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Beach" translatesAutoresizingMaskIntoConstraints="NO" id="3aR-Zc-ydH">
+                                                <rect key="frame" x="3" y="131" width="210" height="85"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WaterFlow" translatesAutoresizingMaskIntoConstraints="NO" id="BE2-35-vUD">
+                                                <rect key="frame" x="218" y="130" width="210" height="85"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjc-8b-yYh" userLabel="ForestButton">
+                                                <rect key="frame" x="0.0" y="35" width="210" height="85"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="handlingMoods:" destination="5ZU-d9-s3l" eventType="touchUpInside" id="XIK-Ld-DYZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egp-PI-Hay" userLabel="RainButton">
+                                                <rect key="frame" x="218" y="37" width="210" height="82"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="handlingMoods:" destination="5ZU-d9-s3l" eventType="touchUpInside" id="2gg-b8-bU0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVK-cM-JaL" userLabel="BeachButton">
+                                                <rect key="frame" x="0.0" y="131" width="210" height="85"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="handlingMoods:" destination="5ZU-d9-s3l" eventType="touchUpInside" id="jXE-Ip-urP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtg-zk-s7E" userLabel="CrowdButton">
+                                                <rect key="frame" x="218" y="131" width="212" height="85"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="handlingMoods:" destination="5ZU-d9-s3l" eventType="touchUpInside" id="GWj-h9-W3y"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forest" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPE-Bb-7Da">
+                                                <rect key="frame" x="3" y="98" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rain" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPt-Jw-HcS">
+                                                <rect key="frame" x="221" y="98" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Na-BV-nzg">
+                                                <rect key="frame" x="3" y="194" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WaterFlow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVd-Tp-TDa">
+                                                <rect key="frame" x="221" y="194" width="68" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view alpha="0.69999999999999984" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zCz-wQ-VxS">
+                                        <rect key="frame" x="0.0" y="376" width="430" height="67"/>
+                                        <subviews>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="0hs-5f-zte">
+                                                <rect key="frame" x="54" y="27" width="314" height="31"/>
+                                                <color key="minimumTrackTintColor" red="0.79215686269999996" green="0.76078431369999999" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </slider>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEZ-Hr-G7y">
+                                                <rect key="frame" x="382" y="20" width="23" height="39"/>
+                                                <state key="normal" image="Previous">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Backward:" destination="5ZU-d9-s3l" eventType="touchUpInside" id="JU3-G0-ZcB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1x-C8-f9W">
+                                                <rect key="frame" x="406" y="21" width="22" height="38"/>
+                                                <state key="normal" image="Next">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="nextButtonClick:" destination="5ZU-d9-s3l" eventType="touchUpInside" id="Tqz-Dt-3sB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEQ-bL-1QO">
+                                                <rect key="frame" x="11" y="28" width="16" height="23"/>
+                                                <state key="normal" backgroundImage="icon_Play.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="play:" destination="5ZU-d9-s3l" eventType="touchUpInside" id="oZn-vh-P6m"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOU-Qw-MLk">
+                                                <rect key="frame" x="322" y="7" width="47" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gne-hX-U6b">
+                                                <rect key="frame" x="59" y="7" width="255" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view alpha="0.69999999999999973" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Pe-dO-JGz">
+                                        <rect key="frame" x="0.0" y="8" width="430" height="132"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tic-VJ-0f3" userLabel="MixMoodLabel">
+                                                <rect key="frame" x="58" y="8" width="315" height="30"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A01E5110-975D-4BCC-8C5B-268FA94E5E21" translatesAutoresizingMaskIntoConstraints="NO" id="95F-Bp-4Kq">
+                                                <rect key="frame" x="8" y="58" width="14" height="16"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4K-29-DY6" userLabel="SongMute">
+                                                <rect key="frame" x="398" y="53" width="26" height="26"/>
+                                                <state key="normal" image="CFC9D4B1-B23D-4F12-BAEA-B3BF8405521F">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="SongMute:" destination="5ZU-d9-s3l" eventType="touchUpInside" id="9OU-AL-fBd"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mix_mixer.png" translatesAutoresizingMaskIntoConstraints="NO" id="c2B-Dd-9h9">
+                                                <rect key="frame" x="8" y="97" width="14" height="16"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xm-qn-I7S" userLabel="MixerMute">
+                                                <rect key="frame" x="398" y="92" width="26" height="26"/>
+                                                <state key="normal" image="CFC9D4B1-B23D-4F12-BAEA-B3BF8405521F">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="MixerMute:" destination="5ZU-d9-s3l" eventType="touchUpInside" id="P4u-OA-Y5F"/>
+                                                </connections>
+                                            </button>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="RyQ-wL-DCu">
+                                                <rect key="frame" x="56" y="53" width="319" height="31"/>
+                                                <color key="minimumTrackTintColor" red="0.79215686269999996" green="0.76078431369999999" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <action selector="volumeChange2:" destination="5ZU-d9-s3l" eventType="touchDragInside" id="0oA-Lq-ETv"/>
+                                                </connections>
+                                            </slider>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="l7S-qb-a1k">
+                                                <rect key="frame" x="56" y="92" width="319" height="31"/>
+                                                <color key="minimumTrackTintColor" red="0.79215686269999996" green="0.76078431369999999" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <action selector="volumeChange:" destination="5ZU-d9-s3l" eventType="touchDragInside" id="E3d-Gs-twU"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zjj-kr-WVF">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <subviews>
+                                    <view alpha="0.69999999999999973" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNo-pR-swc">
+                                        <rect key="frame" x="728" y="162" width="58" height="56"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bge-zo-wpK" userLabel="AddButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="58" height="56"/>
+                                                <state key="normal" image="icon_add-songs.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openfolder:" destination="5ZU-d9-s3l" eventType="touchUpInside" id="A04-Vl-Hwm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="frt-xO-4nV">
+                                        <rect key="frame" x="444" y="40" width="136" height="46"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AU4-pb-O4L"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="AddButtonView" destination="tNo-pR-swc" id="7Ni-cd-tfv"/>
+                        <outlet property="BGImage" destination="jNo-Jn-Tgg" id="aBr-H5-FDi"/>
+                        <outlet property="CtrlFirstView" destination="2Pe-dO-JGz" id="xhK-lO-fFy"/>
+                        <outlet property="CtrlSecondView" destination="cV8-jS-XMw" id="cHx-cX-0WR"/>
+                        <outlet property="CtrlThirdView" destination="zCz-wQ-VxS" id="vrn-Hx-feq"/>
+                        <outlet property="LogoImage" destination="frt-xO-4nV" id="NcP-GR-KXU"/>
+                        <outlet property="MixMoodLabel" destination="tic-VJ-0f3" id="TdE-bz-C6p"/>
+                        <outlet property="ProgressBar" destination="0hs-5f-zte" id="EAy-SI-MW3"/>
+                        <outlet property="aboveView" destination="zjj-kr-WVF" id="Z6x-ye-fyn"/>
+                        <outlet property="artist_Label" destination="gne-hX-U6b" id="ceW-EL-z7R"/>
+                        <outlet property="buttonBackward" destination="jEZ-Hr-G7y" id="lUd-st-IiV"/>
+                        <outlet property="buttonForward" destination="g1x-C8-f9W" id="jcf-CR-GZC"/>
+                        <outlet property="play_pause_Button" destination="QEQ-bL-1QO" id="SuD-wk-mmS"/>
+                        <outlet property="startText" destination="dOU-Qw-MLk" id="2mo-6E-DlM"/>
+                        <outlet property="volumeSlider" destination="RyQ-wL-DCu" id="2UI-h8-D3f"/>
+                        <outlet property="volumeSlider2" destination="l7S-qb-a1k" id="ORF-lN-GbM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bZd-wa-lzL" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3958" y="284"/>
+        </scene>
+        <!--Irst Page View Controller-->
+        <scene sceneID="jsH-A1-Wpk">
+            <objects>
+                <viewController id="lrP-Z8-4LB" customClass="FIrstPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j4e-fp-QP0"/>
+                        <viewControllerLayoutGuide type="bottom" id="OpY-ZV-z4Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7le-2M-aXP">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="moodNavigation" translatesAutoresizingMaskIntoConstraints="NO" id="gdx-h7-mpf">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="173"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hlN-b3-wZW">
+                                <rect key="frame" x="0.0" y="176" width="1024" height="592"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="moodCell" rowHeight="259" id="yWd-qi-dEK" customClass="MoodTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="1024" height="259"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yWd-qi-dEK" id="8s4-0Q-xr8">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="259"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mood1" translatesAutoresizingMaskIntoConstraints="NO" id="LSw-dn-2Ih">
+                                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="259"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mood Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQD-8G-XHP">
+                                                    <rect key="frame" x="20" y="165" width="219" height="34"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What this Mood describes you" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BS-fx-E2T">
+                                                    <rect key="frame" x="20" y="207" width="300" height="34"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="moodDescription" destination="4BS-fx-E2T" id="6AG-b4-iTR"/>
+                                            <outlet property="moodImageView" destination="LSw-dn-2Ih" id="r8c-MY-cg5"/>
+                                            <outlet property="moodTitle" destination="mQD-8G-XHP" id="Fy0-Aq-hRB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lrP-Z8-4LB" id="it0-L0-OsA"/>
+                                    <outlet property="delegate" destination="lrP-Z8-4LB" id="h3Q-sv-jG8"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Select Your Mood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hup-h4-4Og">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="173"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hup-h4-4Og" firstAttribute="leading" secondItem="7le-2M-aXP" secondAttribute="leadingMargin" constant="-16" id="45R-CH-kr8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hup-h4-4Og" secondAttribute="trailing" constant="-16" id="Czl-mG-nL6"/>
+                            <constraint firstItem="hlN-b3-wZW" firstAttribute="top" secondItem="hup-h4-4Og" secondAttribute="bottom" constant="3" id="J34-Q6-5nJ"/>
+                            <constraint firstItem="hlN-b3-wZW" firstAttribute="top" secondItem="gdx-h7-mpf" secondAttribute="bottom" constant="3" id="diu-jH-MNA"/>
+                            <constraint firstItem="OpY-ZV-z4Y" firstAttribute="top" secondItem="hlN-b3-wZW" secondAttribute="bottom" id="eaZ-od-eLi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="5ZU-d9-s3l" kind="modal" identifier="showView" id="Cy4-Kc-iHK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caJ-S6-Zyk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3912" y="-909"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="A01E5110-975D-4BCC-8C5B-268FA94E5E21" width="14" height="16">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
+GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
+c1dOU0NvbG9ygAKADRIgwAAAgAOAC1h7MTQsIDE2fdIVChYYWk5TLm9iamVjdHOhF4AEgArSFQoaHaIb
+HIAFgAaACRAA0iAKISJfEBROU1RJRkZSZXByZXNlbnRhdGlvboAHgAhPEQvuTU0AKgAAA4gAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAQfHx8fVFRUVICAgICysrKy1NTU1AAAAAAAAAAAAAAA
+AAEBAQEeHh4eVFRUVICAgICqqqqq4ODg4Pv7+/v/////////////////////AAAAAAAAAAAAAAAADAwM
+DO/v7+////////////////////////////////////////////Pz8/MAAAAAAAAAAAAAAAAODg4O////
+////////////////////////////////////////////8PDw8AAAAAAAAAAAAAAAAAsLCwvy8vLy////
+////////////+/v7++Dg4OCqqqqqeXl5eWZmZmbk5OTkAAAAAAAAAAAAAAAAEREREfT09PS6urq6fn5+
+flRUVFQfHx8fBAQEBAAAAAAAAAAAAAAAAObm5uYAAAAAAAAAAAAAAAAeHh4e6Ojo6AwMDAwAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAeHh4e5ubm5gAAAAAAAAAAAAAAAB4eHh7l5eXlFxcXFwAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAB0dHR3m5ubmAAAAAAAAAAAAAAAAHR0dHebm5uYdHR0dAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAHR0dHebm5uYAAAAAAAAAAAAAAAAdHR0d5ubm5h0dHR0AAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAPDw8P5ubm5gAAAAAAAAAAAAAAAA8PDw/m5ubmHh4eHgAAAAAAAAAAAAAAAAAAAAAAAAAACwsL
+CycnJyfk5OTkAAAAAAAAAAALCwsLJycnJ+Tk5OQdHR0dAAAAAAAAAAAAAAAADg4ODp6enp7v7+/v8fHx
+8e/v7+8ODg4Onp6envDw8PDx8fHx7+/v7xEREREAAAAAAAAAAAICAgK+vr6+////////////////////
+/729vb3/////////////////////CgoKCgAAAAAAAAAABwcHB/////////////////////+0tLS0////
+/////////////////7Ozs7MAAAAAAAAAAAAAAAAAAAAAaWlpaejo6Ojw8PDwmJiYmAwMDAxpaWlp6Ojo
+6PDw8PCYmJiYDAwMDAAAAAAAAAAAAAAAAAAAAAAAAAAACAgICAsLCwsAAAAAAAAAAAAOAQAAAwAAAAEA
+DgAAAQEAAwAAAAEAEAAAAQIAAwAAAAQAAAQ2AQMAAwAAAAEAAQAAAQYAAwAAAAEAAgAAAREABAAAAAEA
+AAAIARIAAwAAAAEAAQAAARUAAwAAAAEABAAAARYAAwAAAAEAEAAAARcABAAAAAEAAAOAARwAAwAAAAEA
+AQAAAVIAAwAAAAEAAQAAAVMAAwAAAAQAAAQ+h3MABwAAB6gAAARGAAAAAAAIAAgACAAIAAEAAQABAAEA
+AAeoYXBwbAIgAABtbnRyUkdCIFhZWiAH2QACABkACwAaAAthY3NwQVBQTAAAAABhcHBsAAAAAAAAAAAA
+AAAAAAAAAAAA9tYAAQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAtkZXNjAAABCAAAAG9kc2NtAAABeAAABWxjcHJ0AAAG5AAAADh3dHB0AAAHHAAAABRy
+WFlaAAAHMAAAABRnWFlaAAAHRAAAABRiWFlaAAAHWAAAABRyVFJDAAAHbAAAAA5jaGFkAAAHfAAAACxi
+VFJDAAAHbAAAAA5nVFJDAAAHbAAAAA5kZXNjAAAAAAAAABRHZW5lcmljIFJHQiBQcm9maWxlAAAAAAAA
+AAAAAAAUR2VuZXJpYyBSR0IgUHJvZmlsZQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAbWx1YwAAAAAAAAAeAAAADHNrU0sAAAAoAAABeGhySFIAAAAoAAABoGNhRVMA
+AAAkAAAByHB0QlIAAAAmAAAB7HVrVUEAAAAqAAACEmZyRlUAAAAoAAACPHpoVFcAAAAWAAACZGl0SVQA
+AAAoAAACem5iTk8AAAAmAAAComtvS1IAAAAWAAACyGNzQ1oAAAAiAAAC3mhlSUwAAAAeAAADAGRlREUA
+AAAsAAADHmh1SFUAAAAoAAADSnN2U0UAAAAmAAAConpoQ04AAAAWAAADcmphSlAAAAAaAAADiHJvUk8A
+AAAkAAADomVsR1IAAAAiAAADxnB0UE8AAAAmAAAD6G5sTkwAAAAoAAAEDmVzRVMAAAAmAAAD6HRoVEgA
+AAAkAAAENnRyVFIAAAAiAAAEWmZpRkkAAAAoAAAEfHBsUEwAAAAsAAAEpHJ1UlUAAAAiAAAE0GFyRUcA
+AAAmAAAE8mVuVVMAAAAmAAAFGGRhREsAAAAuAAAFPgBWAWEAZQBvAGIAZQBjAG4A/QAgAFIARwBCACAA
+cAByAG8AZgBpAGwARwBlAG4AZQByAGkBDQBrAGkAIABSAEcAQgAgAHAAcgBvAGYAaQBsAFAAZQByAGYA
+aQBsACAAUgBHAEIAIABnAGUAbgDoAHIAaQBjAFAAZQByAGYAaQBsACAAUgBHAEIAIABHAGUAbgDpAHIA
+aQBjAG8EFwQwBDMEMAQ7BEwEPQQ4BDkAIAQ/BEAEPgREBDAEOQQ7ACAAUgBHAEIAUAByAG8AZgBpAGwA
+IABnAOkAbgDpAHIAaQBxAHUAZQAgAFIAVgBCkBp1KAAgAFIARwBCACCCcl9pY8+P8ABQAHIAbwBmAGkA
+bABvACAAUgBHAEIAIABnAGUAbgBlAHIAaQBjAG8ARwBlAG4AZQByAGkAcwBrACAAUgBHAEIALQBwAHIA
+bwBmAGkAbMd8vBgAIABSAEcAQgAg1QS4XNMMx3wATwBiAGUAYwBuAP0AIABSAEcAQgAgAHAAcgBvAGYA
+aQBsBeQF6AXVBeQF2QXcACAAUgBHAEIAIAXbBdwF3AXZAEEAbABsAGcAZQBtAGUAaQBuAGUAcwAgAFIA
+RwBCAC0AUAByAG8AZgBpAGwAwQBsAHQAYQBsAOEAbgBvAHMAIABSAEcAQgAgAHAAcgBvAGYAaQBsZm6Q
+GgAgAFIARwBCACBjz4/wZYdO9k4AgiwAIABSAEcAQgAgMNcw7TDVMKEwpDDrAFAAcgBvAGYAaQBsACAA
+UgBHAEIAIABnAGUAbgBlAHIAaQBjA5MDtQO9A7kDugPMACADwAPBA78DxgOvA7sAIABSAEcAQgBQAGUA
+cgBmAGkAbAAgAFIARwBCACAAZwBlAG4A6QByAGkAYwBvAEEAbABnAGUAbQBlAGUAbgAgAFIARwBCAC0A
+cAByAG8AZgBpAGUAbA5CDhsOIw5EDh8OJQ5MACAAUgBHAEIAIA4XDjEOSA4nDkQOGwBHAGUAbgBlAGwA
+IABSAEcAQgAgAFAAcgBvAGYAaQBsAGkAWQBsAGUAaQBuAGUAbgAgAFIARwBCAC0AcAByAG8AZgBpAGkA
+bABpAFUAbgBpAHcAZQByAHMAYQBsAG4AeQAgAHAAcgBvAGYAaQBsACAAUgBHAEIEHgQxBEkEOAQ5ACAE
+PwRABD4ERAQ4BDsETAAgAFIARwBCBkUGRAZBACAGKgY5BjEGSgZBACAAUgBHAEIAIAYnBkQGOQYnBkUA
+RwBlAG4AZQByAGkAYwAgAFIARwBCACAAUAByAG8AZgBpAGwAZQBHAGUAbgBlAHIAZQBsACAAUgBHAEIA
+LQBiAGUAcwBrAHIAaQB2AGUAbABzAGV0ZXh0AAAAAENvcHlyaWdodCAyMDA3IEFwcGxlIEluYy4sIGFs
+bCByaWdodHMgcmVzZXJ2ZWQuAFhZWiAAAAAAAADzUgABAAAAARbPWFlaIAAAAAAAAHRNAAA97gAAA9BY
+WVogAAAAAAAAWnUAAKxzAAAXNFhZWiAAAAAAAAAoGgAAFZ8AALg2Y3VydgAAAAAAAAABAc0AAHNmMzIA
+AAAAAAEMQgAABd7///MmAAAHkgAA/ZH///ui///9owAAA9wAAMBs0iUmJyhaJGNsYXNzbmFtZVgkY2xh
+c3Nlc18QEE5TQml0bWFwSW1hZ2VSZXCjJykqWk5TSW1hZ2VSZXBYTlNPYmplY3TSJSYsLVdOU0FycmF5
+oiwq0iUmLzBeTlNNdXRhYmxlQXJyYXmjLywq0zIzCjQ1NldOU1doaXRlXE5TQ29sb3JTcGFjZUQwIDAA
+EAOADNIlJjg5V05TQ29sb3KiOCrSJSY7PFdOU0ltYWdlojsqXxAPTlNLZXllZEFyY2hpdmVy0T9AVHJv
+b3SAAQAIABEAGgAjAC0AMgA3AEYATABXAF4AZQByAHkAgQCDAIUAigCMAI4AlwCcAKcAqQCrAK0AsgC1
+ALcAuQC7AL0AwgDZANsA3QzPDNQM3wzoDPsM/w0KDRMNGA0gDSMNKA03DTsNQg1KDVcNXA1eDWANZQ1t
+DXANdQ19DYANkg2VDZoAAAAAAAACAQAAAAAAAABBAAAAAAAAAAAAAAAAAAANnA
+</mutableData>
+        </image>
+        <image name="Beach" width="320" height="568"/>
+        <image name="CFC9D4B1-B23D-4F12-BAEA-B3BF8405521F" width="12" height="13">
+            <mutableData key="keyedArchiveRepresentation">
+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
+VgFhAGUAbwBiAGUAYwBuAP0AIABSAEcAQgAgAHAAcgBvAGYAaQBsAEcAZQBuAGUAcgBpAQ0AawBpACAA
+UgBHAEIAIABwAHIAbwBmAGkAbABQAGUAcgBmAGkAbAAgAFIARwBCACAAZwBlAG4A6AByAGkAYwBQAGUA
+cgBmAGkAbAAgAFIARwBCACAARwBlAG4A6QByAGkAYwBvBBcEMAQzBDAEOwRMBD0EOAQ5ACAEPwRABD4E
+RAQwBDkEOwAgAFIARwBCAFAAcgBvAGYAaQBsACAAZwDpAG4A6QByAGkAcQB1AGUAIABSAFYAQpAadSgA
+IABSAEcAQgAggnJfaWPPj/AAUAByAG8AZgBpAGwAbwAgAFIARwBCACAAZwBlAG4AZQByAGkAYwBvAEcA
+ZQBuAGUAcgBpAHMAawAgAFIARwBCAC0AcAByAG8AZgBpAGzHfLwYACAAUgBHAEIAINUEuFzTDMd8AE8A
+YgBlAGMAbgD9ACAAUgBHAEIAIABwAHIAbwBmAGkAbAXkBegF1QXkBdkF3AAgAFIARwBCACAF2wXcBdwF
+2QBBAGwAbABnAGUAbQBlAGkAbgBlAHMAIABSAEcAQgAtAFAAcgBvAGYAaQBsAMEAbAB0AGEAbADhAG4A
+bwBzACAAUgBHAEIAIABwAHIAbwBmAGkAbGZukBoAIABSAEcAQgAgY8+P8GWHTvZOAIIsACAAUgBHAEIA
+IDDXMO0w1TChMKQw6wBQAHIAbwBmAGkAbAAgAFIARwBCACAAZwBlAG4AZQByAGkAYwOTA7UDvQO5A7oD
+zAAgA8ADwQO/A8YDrwO7ACAAUgBHAEIAUABlAHIAZgBpAGwAIABSAEcAQgAgAGcAZQBuAOkAcgBpAGMA
+bwBBAGwAZwBlAG0AZQBlAG4AIABSAEcAQgAtAHAAcgBvAGYAaQBlAGwOQg4bDiMORA4fDiUOTAAgAFIA
+RwBCACAOFw4xDkgOJw5EDhsARwBlAG4AZQBsACAAUgBHAEIAIABQAHIAbwBmAGkAbABpAFkAbABlAGkA
+bgBlAG4AIABSAEcAQgAtAHAAcgBvAGYAaQBpAGwAaQBVAG4AaQB3AGUAcgBzAGEAbABuAHkAIABwAHIA
+bwBmAGkAbAAgAFIARwBCBB4EMQRJBDgEOQAgBD8EQAQ+BEQEOAQ7BEwAIABSAEcAQgZFBkQGQQAgBioG
+OQYxBkoGQQAgAFIARwBCACAGJwZEBjkGJwZFAEcAZQBuAGUAcgBpAGMAIABSAEcAQgAgAFAAcgBvAGYA
+aQBsAGUARwBlAG4AZQByAGUAbAAgAFIARwBCAC0AYgBlAHMAawByAGkAdgBlAGwAcwBldGV4dAAAAABD
+b3B5cmlnaHQgMjAwNyBBcHBsZSBJbmMuLCBhbGwgcmlnaHRzIHJlc2VydmVkLgBYWVogAAAAAAAA81IA
+AQAAAAEWz1hZWiAAAAAAAAB0TQAAPe4AAAPQWFlaIAAAAAAAAFp1AACscwAAFzRYWVogAAAAAAAAKBoA
+ABWfAAC4NmN1cnYAAAAAAAAAAQHNAABzZjMyAAAAAAABDEIAAAXe///zJgAAB5IAAP2R///7ov///aMA
+AAPcAADAbNIlJicoWiRjbGFzc25hbWVYJGNsYXNzZXNfEBBOU0JpdG1hcEltYWdlUmVwoycpKlpOU0lt
+YWdlUmVwWE5TT2JqZWN00iUmLC1XTlNBcnJheaIsKtIlJi8wXk5TTXV0YWJsZUFycmF5oy8sKtMyMwo0
+NTZXTlNXaGl0ZVxOU0NvbG9yU3BhY2VEMCAwABADgAzSJSY4OVdOU0NvbG9yojgq0iUmOzxXTlNJbWFn
+ZaI7Kl8QD05TS2V5ZWRBcmNoaXZlctE/QFRyb290gAEACAARABoAIwAtADIANwBGAEwAVwBeAGUAcgB5
+AIEAgwCFAIoAjACOAJcAnACnAKkAqwCtALIAtQC3ALkAuwC9AMIA2QDbAN0LvwvEC88L2AvrC+8L+gwD
+DAgMEAwTDBgMJwwrDDIMOgxHDEwMTgxQDFUMXQxgDGUMbQxwDIIMhQyKAAAAAAAAAgEAAAAAAAAAQQAA
+AAAAAAAAAAAAAAAADIw
+</mutableData>
+        </image>
+        <image name="Forest" width="320" height="568"/>
+        <image name="Next" width="10" height="19"/>
+        <image name="Previous" width="10" height="19"/>
+        <image name="Rain" width="320" height="568"/>
+        <image name="WaterFlow" width="320" height="568"/>
+        <image name="icon_Play.png" width="16" height="23"/>
+        <image name="icon_add-songs.png" width="24" height="24"/>
+        <image name="logo.png" width="130" height="46"/>
+        <image name="mix_mixer.png" width="14" height="16"/>
+        <image name="mood1" width="1280" height="500"/>
+        <image name="moodNavigation" width="1280" height="258"/>
+    </resources>
+</document>
