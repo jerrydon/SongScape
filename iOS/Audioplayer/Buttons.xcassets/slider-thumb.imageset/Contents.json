@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "slider-thumb@2x-2.png",
       "scale" : "1x"
     },
     {
@@ -11,7 +12,7 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "slider-thumb@3x.png",
+      "filename" : "slider-thumb@2x-1.png",
       "scale" : "3x"
     }
   ],

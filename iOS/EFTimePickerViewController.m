@@ -17,7 +17,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define IDIOM    UI_USER_INTERFACE_IDIOM()
-#define IPAD     UIUserInterfaceIdiomPad
+#define IPAD     UIUserInterfaceIdiomPadƒ
 NSString *flag;
 float MuteValue;
 
@@ -40,21 +40,20 @@ float MuteValue;
 @synthesize backgroundMoodView;
 AVAudioPlayer *player;
 AVAudioPlayer *player2;
-//MPMoviePlayerController *moviePlayer;
-
 NSTimer *sliderTimer;
 
 
 bool player1_running = false;
 bool player2_running= false;
-
-//bool notification = false;
 bool played = false;
-
 bool movie_player_value = false;
-
 BOOL initialLoading =true;
 MPMediaItem *playingItem;
+BOOL repeatOne = false;
+UILabel * mixCountLabel;
+BOOL abc = false;
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -67,15 +66,20 @@ MPMediaItem *playingItem;
 
 - (void)viewDidLoad
 {
-    float vol = [[AVAudioSession sharedInstance] outputVolume];
-    NSLog(@"output volume: %1.2f dB", 20.f*log10f(vol+FLT_MIN));
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     
-    UIImage *buttonImage = [UIImage imageNamed:@"Play"];
-    [play_pause_Button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    
+    
+    [play_pause_Button setImage:[UIImage imageNamed:@"Play"] forState:UIControlStateNormal];
+    //To set repetButtonImage Initial load:
+    UIImage *repetButtonImage = [UIImage imageNamed:@"repet"];
+    [repeatButton setBackgroundImage:repetButtonImage forState:UIControlStateNormal];
+    //To set shuffleButtonImage Initial load:
+    UIImage *shuffleButtonImage = [UIImage imageNamed:@"shuffle"];
+    [shuffleButton setBackgroundImage:shuffleButtonImage forState:UIControlStateNormal];
+
 
     self.pickerView = [[AKPickerView alloc] initWithFrame:CGRectMake(0, 0, self.moodSelectionView.frame.size.width,  self.moodSelectionView.frame.size.height)];
-    
-
     self.pickerView.delegate = self;
     self.pickerView.dataSource = self;
     self.pickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -92,7 +96,7 @@ MPMediaItem *playingItem;
     
     self.titles = @[@"FOREST",
                     @"RAIN THUNDER",
-                    @"BEATCH",
+                    @"BEACH",
                     @"WATER FLOW"];
     
     [self.pickerView reloadData];
@@ -111,18 +115,27 @@ MPMediaItem *playingItem;
     divitionLayer.layer.masksToBounds = YES;
     [self.mixControllView addSubview:divitionLayer];
     
-    
-    
-    
+    //For Adding Mix BackGround Image
     backgroundMoodView =[[UIImageView alloc] initWithFrame:CGRectMake((self.mixControllView.frame.size.width-mixsilderFrame)/2,(self.mixControllView.frame.size.height-mixsilderFrame)/2, mixsilderFrame, mixsilderFrame)];
-    
-    
     
     backgroundMoodView.layer.cornerRadius = backgroundMoodView.frame.size.width/2;
     [backgroundMoodView setBackgroundColor:[UIColor whiteColor]];
     backgroundMoodView.layer.masksToBounds = YES;
     [self.mixControllView addSubview:backgroundMoodView];
     
+    //For Adding Label inside Mix BackGround Image:
+    mixCountLabel = [[UILabel alloc]initWithFrame: CGRectMake((self.mixControllView.frame.size.width-mixsilderFrame)/2,(self.mixControllView.frame.size.height-mixsilderFrame)/2, mixsilderFrame, mixsilderFrame)];
+    
+    mixCountLabel.text = @"100%";
+    mixCountLabel.textColor = [UIColor whiteColor];
+    mixCountLabel.textAlignment = NSTextAlignmentCenter;
+    mixCountLabel.font = [UIFont systemFontOfSize:50];
+    
+    mixCountLabel.layer.cornerRadius = backgroundMoodView.frame.size.width/2;
+    [mixCountLabel setBackgroundColor:[UIColor clearColor]];
+    mixCountLabel.layer.masksToBounds = YES;
+    [self.mixControllView addSubview:mixCountLabel];
+
     
     
     
@@ -130,81 +143,65 @@ MPMediaItem *playingItem;
     minuteSlider = [[EFCircularSlider alloc] initWithFrame:minuteSliderFrame];
     minuteSlider.unfilledColor = [UIColor colorWithRed:25/255.0f green:1/255.0f blue:75/255.0f alpha:1.0f];
     minuteSlider.filledColor = [UIColor colorWithRed:250/255.0f green:46/255.0f blue:255/255.0f alpha:1.0f];
-  //  [minuteSlider setInnerMarki/Users/toobler/Projects/SongScapeWithotAnimation ngLabels:@[@"5", @"10", @"15", @"20", @"25", @"30", @"35", @"40", @"45", @"50", @"55", @"60"]];
     minuteSlider.labelFont = [UIFont systemFontOfSize:14.0f];
     minuteSlider.lineWidth = 4;
     minuteSlider.minimumValue = 0;
-    minuteSlider.maximumValue = 100;
+    minuteSlider.maximumValue = 10;
+    minuteSlider.currentValue = 2;
     minuteSlider.labelColor = [UIColor colorWithRed:76/255.0f green:111/255.0f blue:137/255.0f alpha:1.0f];
     minuteSlider.handleType = CircularSliderHandleTypeDoubleCircleWithOpenCenter;
     minuteSlider.handleColor = minuteSlider.filledColor;
     [self.mixControllView addSubview:minuteSlider];
     [minuteSlider addTarget:self action:@selector(minuteDidChange:) forControlEvents:UIControlEventValueChanged];
     
-//    CGRect hourSliderFrame = CGRectMake((self.mixControllView.frame.size.width-150)/2,(self.mixControllView.frame.size.height-150)/2, 150, 150);
-//    hourSlider = [[EFCircularSlider alloc] initWithFrame:hourSliderFrame];
-//    hourSlider.unfilledColor = [UIColor colorWithRed:23/255.0f green:47/255.0f blue:70/255.0f alpha:1.0f];
-//    hourSlider.filledColor = [UIColor colorWithRed:98/255.0f green:243/255.0f blue:252/255.0f alpha:1.0f];
-//    //[hourSlider setInnerMarkingLabels:@[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"]];
-//    hourSlider.labelFont = [UIFont systemFontOfSize:14.0f];
-//    hourSlider.lineWidth = 14;
-//    hourSlider.snapToLabels = NO;
-//    hourSlider.minimumValue = 0;
-//    hourSlider.maximumValue = 500;
-//    hourSlider.labelColor = [UIColor colorWithRed:127/255.0f green:229/255.0f blue:255/255.0f alpha:1.0f];
-//    hourSlider.handleType = CircularSliderHandleTypeBigCircle;
-//    hourSlider.handleColor = hourSlider.filledColor;
-//   [self.mixControllView addSubview:hourSlider];
-//    [hourSlider addTarget:self action:@selector(hourDidChange:) forControlEvents:UIControlEventValueChanged];
+
     
-//    *** To set MoodLabel While Loading from the TableView ***//
     
-    TBMoods *MoodName=_selectedMood;
-     //NSLog(@"%@", MoodName.moodDescription);
-    //MixMoodLabel.text=MoodName.moodDescription;
-    
+//    *** To set MoodLabel While Loading Initially
+       _selectedMood=[[[NSAvailableMoods getInstance]getAvailableMoods]objectAtIndex:0];
     
 //    *** To set MoodImage While Loading from the TableView ***//
-    
-    
-    NSLog(@"%@", MoodName.selectedFlag);
-    if ([MoodName.selectedFlag isEqualToString:@"0"]) {
-      //  _pickerView.selectedItem =
-        [backgroundMoodView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Forest"]]];
-        
-        
-    }else if ([MoodName.selectedFlag isEqualToString:@"1"])
-        
-    {
-        [backgroundMoodView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Rain"]]];
-        
-    }else if ([MoodName.selectedFlag isEqualToString:@"2"])
-    {
-        [backgroundMoodView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"Beach"]]];
-    }
-    
-    else if ([MoodName.selectedFlag isEqualToString:@"3"])
-    {
-        [backgroundMoodView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"WaterFlow"]]];
-        
-        
-    }
-    
-    
+    [backgroundMoodView setImage:[UIImage imageNamed:@"Forest"]];
     flag=@"1";
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     
-    
     //***To set ThumbImage for Slider Button***//
-    
     [ProgressBar setThumbImage: [UIImage imageNamed:@"slider-thumb"] forState:UIControlStateNormal];
     
     [super viewDidLoad];
    [self player2_play:nil];
     
+  
 
     
+}
+
+
+////*******Jithu
+//- (IBAction)volumeDidChange:(UISlider *)slider {
+//    //Handle the slider movement
+//    [player setVolume:[slider value]];
+//}
+//
+//- (IBAction)togglePlayingState:(id)button {
+//    //Handle the button pressing
+//    [self togglePlayPause];
+//}
+////**********Jithu
+
+
+
+- (void)endInterruptionWithFlags:(NSUInteger)flags {
+    // Validate if there are flags available.
+    if (flags) {
+        // Validate if the audio session is active and immediately ready to be used.
+        if (AVAudioSessionInterruptionFlags_ShouldResume) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1), dispatch_get_main_queue(), ^{
+                // Resume playing the audio.
+            });
+        }
+    }
 }
 
 
@@ -213,12 +210,26 @@ MPMediaItem *playingItem;
 //    int newVal = (int)slider.currentValue;
 //    player2.volume = newVal/10;
     
-    MuteValue =slider.currentValue;
+  
     player2.volume = slider.currentValue/10;
+    NSLog(@"%f",player2.volume);
+    
+    int abc = player2.volume*100;
+    NSLog(@"%d", abc);
+    
+    mixCountLabel.text = [NSString stringWithFormat:@"%d %@", abc, @"%Mix"];
+    NSLog(@"%@",mixCountLabel);
+    
     
 
     
 }
+//MPMediaItem item = [arrAnand objectAtIndex:i];
+//NSURL *url = [item valueForProperty:MPMediaItemPropertyAssetURL];
+//AVPlayerItem playerItem = [AVPlayerItem playerItemWithURL:url];
+//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying) name:AVPlayerItemDidPlayToEndTimeNotification object:playerItem];
+//AVPlayer* player = [[[AVPlayer alloc] initWithPlayerItem:playerItem] autorelease]; [player play];
+//} -(void)itemDidFinishPlaying { // Will be called when AVPlayer finishes playing playerItem }` –
 
 
 - (void)didReceiveMemoryWarning
@@ -310,33 +321,97 @@ MPMediaItem *playingItem;
 }
 -(void)viewDidAppear:(BOOL)animated{
     
-    CGRect Frame;
-    if (self.view.bounds.size.height<568) {
-        Frame=CGRectMake(4, 220, 312, 202);
-    }
-    else{
-        Frame=CGRectMake(4, 264, 312, 202);
-        
-    }
     
-    [UIView animateWithDuration:.4 animations:^{
-        [CtrlThirdView setFrame:Frame];
-    } completion:^(BOOL finished) {
-        
-    }];
+    //Once the view has loaded then we can register to begin recieving controls and we can become the first responder
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
     
-    
+    //To open Songs folder on Initial Loading.
     if (initialLoading) {
         [self openfolder:nil];
         initialLoading = false;
     }
     
 }
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    //End recieving events
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    [self resignFirstResponder];
+}
+
+////****Jithu
+//- (void)playAudio {
+//    //Play the audio and set the button to represent the audio is playing
+//    [player play];
+//    [player2 play];
+//    [play_pause_Button setImage:[UIImage imageNamed:@"Pause"] forState:UIControlStateNormal];
+//    [play_pause_Button setTitle:@"Pause" forState:UIControlStateNormal];
+//    
+//}
+//
+//- (void)pauseAudio {
+//    //Pause the audio and set the button to represent the audio is paused
+//    [player pause];
+//    //[player2 pause];
+//    [play_pause_Button setImage:[UIImage imageNamed:@"Play"] forState:UIControlStateNormal];
+//    [play_pause_Button setTitle:@"Play" forState:UIControlStateNormal];
+//    
+//}
+//
+//- (void)togglePlayPause {
+//    //Toggle if the music is playing or paused
+//    if (!player.playing) {
+//        [self playAudio];
+//        
+//    } else if (player.playing) {
+//        [self pauseAudio];
+//        
+//    }
+//}
+
+//Make sure we can recieve remote control events
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    //if it is a remote control event handle it correctly
+    NSLog(@"%@", event);
+    if (event.type == UIEventTypeRemoteControl) {
+        
+        if (event.subtype == UIEventSubtypeRemoteControlPlay) {
+            
+            [self play:nil];
+            
+        }
+        else if (event.subtype == UIEventSubtypeRemoteControlPause) {
+            abc = true;
+            [self play:nil];
+            abc = false;
+            
+//            [self togglePlayPause];
+
+            
+            
+        }
+        else if (event.subtype == UIEventSubtypeRemoteControlNextTrack){
+            
+            [self nextButtonClick:nil];
+        }else if (event.subtype == UIEventSubtypeRemoteControlPreviousTrack){
+            
+            [self Backward:nil];
+        }
+    }
+}
+//********Jithu
+
 /**
  *  @author Rohith
  *  HANDLE THE PLAY FUNCTION FOR PLAYER1
  */
-
 
 - (IBAction)play:(id)sender{
     /*
@@ -344,70 +419,50 @@ MPMediaItem *playingItem;
      * Else alert there is no media files in device
      */
     
-    if(playingItem){
+    //******Jithu
+    
+    NSError *error;
+    
+    if(!playingItem){
         
-        NSString *songTitle = [playingItem valueForProperty: MPMediaItemPropertyTitle];
+        NSLog(@"%@", [error localizedDescription]);
         
-        //NSString * artist  = [playingItem valueForProperty:MPMediaItemPropertyArtist];
-        /*
-         * Checking the player1 runnin status and if no status then create new player and assingn
-         * new song else playing the song
-         * Setting for on the paused condition the song length to be found.
-         */
-        if(!player1_running){
-            
-            player = [[AVAudioPlayer alloc] initWithContentsOfURL:[playingItem valueForProperty: MPMediaItemPropertyAssetURL] error:nil];
-            
-            
-            player1_running =     true;
-            
-            
-            /* Getting the current song duraion */
-            
-            ProgressBar.maximumValue = player.duration;
-            [ProgressBar addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
-            [player prepareToPlay];
-            
-            
-            [player setDelegate:self];
-        }
-        /* Setting the slider value changes by calling the update slider method */
+         [play_pause_Button setEnabled:NO];
         
-        sliderTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"NO FILES"
+                                                        message:@"No Files Found in the Music Library" delegate:self cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+
+    } else if (played == false){
         
-        /*
-         * Checking whether the player is already on or not by checking the "played"
-         * If the player is on then setting the "played" value to false getting the
-         * Volumeslider value and pausing the player.
-         * Else player is set to play the song.
-         */
+        //Declare the audio file location and settup the player
+        player = [[AVAudioPlayer alloc] initWithContentsOfURL:[playingItem valueForProperty: MPMediaItemPropertyAssetURL] error:nil];
         
-        if(played){
-            played = false;
-            UIImage *buttonImage = [UIImage imageNamed:@"Play"];
-            [play_pause_Button setBackgroundImage:buttonImage forState:UIControlStateNormal];
-            [player setCurrentTime:ProgressBar.value];
-            [player pause];
-            [player prepareToPlay];
-            
-        }else{
-            played = true;
-            UIImage *buttonImage = [UIImage imageNamed:@"Pause"];
-            [play_pause_Button setBackgroundImage:buttonImage forState:UIControlStateNormal];
-            [player setCurrentTime:ProgressBar.value];
-            [player play];
-        }
+        NSLog(@"%@", player);
+        
+        
+        //Make sure the system follows our playback status
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+        [[AVAudioSession sharedInstance] setActive: YES error: nil];
+        [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
 
         
-        /*
-         * Calculating the time of the song currently playing and showing the increment
-         * value according to the player play the song.
-         */
-        float cTime =ProgressBar.maximumValue;
-        int minutes = floor(cTime/60);
-        int seconds = trunc(cTime - minutes * 60);
-        [endText setText:[NSString stringWithFormat:@"%d:%02d", minutes, seconds]];
         
+//    //NSString *category = supportsBackgroundOperation ? AVAudioSessionCategoryPlayback : AVAudioSessionCategoryAmbient;
+//    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionMixWithOthers error:nil];
+        
+        
+        /* Getting the current song duraion */
+        
+        ProgressBar.maximumValue = player.duration;
+        [ProgressBar addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
+        [player prepareToPlay];
+        
+        /* Setting the slider value changes by calling the update slider method */
+        sliderTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
+
+        NSString *songTitle = [playingItem valueForProperty: MPMediaItemPropertyTitle];
         
         /*
          * Setting the song title and the songTitle name from the arrays and set text values
@@ -423,34 +478,129 @@ MPMediaItem *playingItem;
             [self nextButtonClick:sender];
         }
         
-    }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"NO FILES"
-                                                        message:@"No Files Found in the Music Library" delegate:self cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        /*
+         * Calculating the time of the song currently playing and showing the increment
+         * value according to the player play the song.
+         */
+        float cTime =ProgressBar.maximumValue;
+        int minutes = floor(cTime/60);
+        int seconds = trunc(cTime - minutes * 60);
+        [endText setText:[NSString stringWithFormat:@"%d:%02d", minutes, seconds]];
+
+
+                    played = true;
+                    [play_pause_Button setImage:[UIImage imageNamed:@"Pause"] forState:UIControlStateNormal];
+                    [player setCurrentTime:ProgressBar.value];
+                    [player play];
+                    [player2 play];
+                    [player prepareToPlay];
+                    [player setDelegate:self];
+//                }
+
+
+        //Load the audio into memory
+        //[player play];
+    }else {
+        played = false;
+        if (abc == false){
+            [play_pause_Button setImage:[UIImage imageNamed:@"Play"] forState:UIControlStateNormal];
+            [player setCurrentTime:ProgressBar.value];
+            [player pause];
+            [player2 pause];
+        }else{
+            [play_pause_Button setImage:[UIImage imageNamed:@"Play"] forState:UIControlStateNormal];
+            [player setCurrentTime:ProgressBar.value];
+            [player pause];
+//            [player2 pause];
+            
+
+        }
+        
+        [player prepareToPlay];
+        [player setDelegate:self];
+
     }
+    
+}
+
+
+// To repeat same song:
+-(IBAction)repeatSong:(id)sender{
+   
+    if (repeatOne == true){
+        player.numberOfLoops = 0;
+        
+        UIImage *repetButtonImage = [UIImage imageNamed:@"repet"];
+        [repeatButton setBackgroundImage:repetButtonImage forState:UIControlStateNormal];
+        
+        repeatOne = false;
+    
+    }else{
+        player.numberOfLoops = -1;
+        
+        UIImage *repetButtonImage = [UIImage imageNamed:@"repetSelect"];
+        [repeatButton setBackgroundImage:repetButtonImage forState:UIControlStateNormal];
+        repeatOne = true;
+    }
+    
+}
+
+
+//To shuffle the Songs.
+
+-(IBAction)suffleSongs:(id)sender{
+    
+    
+    int randomNumber = arc4random() % 8 + 1;
+    
+//    player = [[AVAudioPlayer alloc] initWithContentsOfURL:[playingItem valueForProperty: MPMediaItemPropertyAssetURL] error:nil];
+    
+    
+    
+    
+    NSURL *soundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:[NSString stringWithFormat:@"Sound%02d", randomNumber] ofType:@"mp3"]];
+    
+    NSLog(@"%@", soundURL);
+    
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
+    
+    [player prepareToPlay];
+    [player play];
+    
+    
+    NSLog(@"randomNumber is %d", randomNumber);
+    NSLog(@"tmpFilename is %@", soundURL);
+    
 }
 
 
 
-
-////...To Mute the Mixer Sound...//
-//- (IBAction)MixerMute:(id)sender
+//-(void)itemDidFinishPlaying
 //{
-//    static BOOL muted = NO;
-//    if (muted) {
-//       // [mute1 setImage:[UIImage imageNamed:@"mix_mute@2x.png"] forState:UIControlStateNormal];
-//        
-//        player2.volume =MuteValue;
-//        // [player2 setVolume:1.0];
-//    } else {
-//        [player2 setVolume:0.0];
-//        //[mute1 setImage:[UIImage imageNamed:@"mix_mute.png"] forState:UIControlStateNormal];
-//        
+//    
+//    MPMediaQuery *everything = [[MPMediaQuery alloc] init];
+////    MPMediaItem * abc  = [everything items];
+////    NSArray *itemsFromGenericQuery = [everything items];
+////    everything = nil;
+////    if ([itemsFromGenericQuery containsObject:playingItem]) {
+////        int  i =  [itemsFromGenericQuery indexOfObject:playingItem];
+////    }
+//
+//    
+//    
+////    MPMediaItem *item = [itemsFromGenericQuery objectAtIndex:everything];
+//    
+//    MPMediaItem *abc = [everything items];
+//    
+//    NSURL *url = [abc valueForProperty:MPMediaItemPropertyAssetURL];
+//    
+//    if(player)
+//    {
+//        player = nil;
 //    }
-//    muted = !muted;
+//    player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+//    [player play];
 //}
-
 
 /*
  *  @author Rohith
@@ -458,8 +608,8 @@ MPMediaItem *playingItem;
  * HANDLE THE SLIDER CHANGES ACCORDING
  * THE PLAYER 1 PLAYS THE SONG
  */
-
 - (void)updateSlider {
+    
     if(playingItem){
         // Update the slider about the music time
         ProgressBar.value = player.currentTime;
@@ -508,7 +658,6 @@ MPMediaItem *playingItem;
 }
 
 
-
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)play successfully:(BOOL)flag {
     /*
      * If player2 is finished then
@@ -549,11 +698,7 @@ MPMediaItem *playingItem;
         // And setting the buttons to the previous style.
         
         movie_player_value = false;
-        //[moviePlayer.view setFrame:CGRectMake(0, 0, 0, 0)];
         
-        // Setting the movieplayer content to nil and stops the movie player
-        //moviePlayer.contentURL = nil;
-        //[moviePlayer stop];
         
         // stopping the mood song player
         [player2 stop];
@@ -569,22 +714,9 @@ MPMediaItem *playingItem;
     {
         
         
-        // For starting or restarting the  mood player , stopping the movie player for start another video
+        // For starting or restarting the  mood player
         
         player2_running = true;
-        //[moviePlayer stop];
-        
-        {
-            
-            // else Setting the images and texts for rain
-            
-            [playingimage setImage:[UIImage imageNamed:@"rain"]];
-            [playingText setText:[NSString stringWithFormat:@"Rain & Thunder"] ];
-            [buttonRain setBackgroundImage:[UIImage imageNamed:@"rain_pause"] forState:UIControlStateNormal];
-            [buttonnature setBackgroundImage:[UIImage imageNamed:@"forest"] forState:UIControlStateNormal];
-            [buttonSea setBackgroundImage:[UIImage imageNamed:@"sea"] forState:UIControlStateNormal];
-        }
-        
         
         // Setting the file path which the movie player file to be stored
         //Starting the movie player by setting the new resource
@@ -598,9 +730,17 @@ MPMediaItem *playingItem;
         [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
         player2.delegate=self;
         
-        player2.volume = minuteSlider.currentValue;
+        player2.volume = minuteSlider.currentValue/10;
+        NSLog(@"%f",player2.volume);
+        int abc = player2.volume*100;
+        NSLog(@"%d", abc);
+        mixCountLabel.text = [NSString stringWithFormat:@"%d %@", abc, @"%Mix"];
+        NSLog(@"%@",mixCountLabel);
+
         [player2 play];
     }
+    
+
     
 }
 
@@ -725,17 +865,8 @@ MPMediaItem *playingItem;
     }
     if ([[NSString stringWithFormat:@"%ld",(long)handlingtag]isEqualToString:@"3"]) {
         
-         [backgroundMoodView setImage:[UIImage imageNamed:@"waterflow.png"]];
+         [backgroundMoodView setImage:[UIImage imageNamed:@"WaterFlow"]];
     }
-}
-
--(IBAction)backButtonPressed:(id)sender
-{
-    //[self.navigationController popViewControllerAnimated:YES];
-    [self.navigationController popToRootViewControllerAnimated:YES];
-
-
-
 }
 
 

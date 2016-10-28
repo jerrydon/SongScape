@@ -9,12 +9,12 @@
 #import "TBMoods.h"
 
 @implementation TBMoods
--(id)initwithName:(NSString *)name Description :(NSString *)description Image :(NSString *)image  Image1 :(NSString * ) BgImage andSound:(NSString *)sound  selectedFlag: (NSString *)sFlag;{
+-(id)initwithName:(NSString *)name Image1 :(NSString * ) BgImage andSound:(NSString *)sound  selectedFlag: (NSString *)sFlag;{
     id instance =[self init];
     
     _moodName           =name;
-    _moodDescription    =description;
-    _moodImage          =image;
+//    _moodDescription    =description;
+//    _moodImage          =image;
     _BackImage          =BgImage;
     //_moodVideo          =video;
     _moodSound          =sound;

@@ -60,9 +60,9 @@ static int selectedIndex;
     
     TBMoods *mood = [[[NSAvailableMoods getInstance]getAvailableMoods]objectAtIndex:indexPath.row];
     MoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"moodCell" forIndexPath:indexPath];
-    cell.moodDescription.text=mood.moodDescription;
+//    cell.moodDescription.text=mood.moodDescription;
     cell.moodTitle.text = mood.moodName;
-    cell.moodImageView.image =[UIImage imageNamed:mood.moodImage];
+//    cell.moodImageView.image =[UIImage imageNamed:mood.moodImage];
     return cell;
     
 }

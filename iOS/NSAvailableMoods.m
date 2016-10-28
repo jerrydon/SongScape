@@ -35,46 +35,46 @@ NSMutableArray *arrayMoods;
     arrayMoods = [[NSMutableArray alloc]init];
     
     NSString *moodName= @"Forest";
-    NSString *moodDescription= @"Mix Your Song with Nature Mood";
-    NSString *moodImage= @"mood1";
+    //NSString *moodDescription= @"Mix Your Song with Nature Mood";
+   // NSString *moodImage= @"mood1";
     NSString *BackImage=@"Forest";
-    NSString *moodSound= @"mood1";
+    NSString *moodSound= @"Forest";
    // NSString *moodVideo= @"mood1";
     NSString *selectedFlag= @"0";
     
     
-    [arrayMoods addObject:[[TBMoods alloc]initwithName:moodName Description:moodDescription Image:moodImage Image1:BackImage andSound :moodSound  selectedFlag:selectedFlag]] ;
+    [arrayMoods addObject:[[TBMoods alloc]initwithName:moodName Image1:BackImage andSound :moodSound  selectedFlag:selectedFlag]] ;
     
     moodName= @"Rain & Thunder";
-    moodDescription= @"Mix Your Song with Rain Mood";
-    moodImage= @"mood3";
+    //moodDescription= @"Mix Your Song with Rain Mood";
+    //moodImage= @"mood3";
     BackImage= @"Rain";
-    moodSound= @"mood3";
+    moodSound= @"Rain & Thunder";
    // moodVideo= @"mood3";
     selectedFlag= @"1";
     
     
     
-    [arrayMoods addObject:[[TBMoods alloc]initwithName:moodName Description:moodDescription Image:moodImage Image1:BackImage andSound :moodSound selectedFlag:selectedFlag]] ;
+    [arrayMoods addObject:[[TBMoods alloc]initwithName:moodName  Image1:BackImage andSound :moodSound selectedFlag:selectedFlag]] ;
     moodName= @"Beach";
-    moodDescription= @"Mix Your Song with Wave Mood";
-    moodImage= @"mood2";
+//    moodDescription= @"Mix Your Song with Wave Mood";
+//    moodImage= @"mood2";
     BackImage= @"Beach";
-    moodSound= @"mood2";
+    moodSound= @"Beach";
   //  moodVideo= @"mood7";
     selectedFlag= @"2";
 
     
-    [arrayMoods addObject:[[TBMoods alloc]initwithName:moodName Description:moodDescription Image:moodImage Image1:BackImage andSound :moodSound selectedFlag:selectedFlag]] ;
+    [arrayMoods addObject:[[TBMoods alloc]initwithName:moodName Image1:BackImage andSound :moodSound selectedFlag:selectedFlag]] ;
     moodName= @"WaterFlow";
-    moodDescription= @"Mix your Song with WaterFlow Mood";
-    moodImage= @"mood4";
+//    moodDescription= @"Mix your Song with WaterFlow Mood";
+//    moodImage= @"mood4";
     BackImage= @"WaterFlow";
-    moodSound= @"mood1";
+    moodSound= @"mood4";
   //  moodVideo= @"mood2";
     selectedFlag= @"3";
     
-    [arrayMoods addObject:[[TBMoods alloc]initwithName:moodName Description:moodDescription Image:moodImage Image1:BackImage andSound :moodSound  selectedFlag:selectedFlag]] ;
+    [arrayMoods addObject:[[TBMoods alloc]initwithName:moodName Image1:BackImage andSound :moodSound  selectedFlag:selectedFlag]] ;
 
 
 }

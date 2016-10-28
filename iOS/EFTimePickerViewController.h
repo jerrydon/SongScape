@@ -82,6 +82,12 @@
     
     __weak IBOutlet UIButton *animationButton;
     
+     __weak IBOutlet UIButton *shuffleButton;
+    
+     __weak IBOutlet UIButton *repeatButton;
+    
+     __weak IBOutlet UIButton *favouriteButton;
+    
     // __weak IBOutlet UILabel *controllLabel;
     
     //__weak IBOutlet UILabel *ScrollLabel;

@@ -10,18 +10,6 @@
 		0AB2B461D335C2416C6E4150 /* libPods-Audioplayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6154AF678FC3EBDE66E922 /* libPods-Audioplayer.a */; };
 		960A6AD71A04B7CE009EE639 /* Music.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960A6AD61A04B7CE009EE639 /* Music.xcassets */; };
 		960C1D551A28494E00DCA1B8 /* TBLAnimateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 960C1D541A28494E00DCA1B8 /* TBLAnimateView.m */; };
-		960C91981A15C7600083676F /* beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 960C91901A15C7600083676F /* beach.png */; };
-		960C919A1A15C7600083676F /* forest.png in Resources */ = {isa = PBXBuildFile; fileRef = 960C91921A15C7600083676F /* forest.png */; };
-		960C919C1A15C7600083676F /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 960C91941A15C7600083676F /* rain.png */; };
-		960C919E1A15C7600083676F /* waterflow.png in Resources */ = {isa = PBXBuildFile; fileRef = 960C91961A15C7600083676F /* waterflow.png */; };
-		960C91A41A15CD120083676F /* BG_Beach@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 960C91A01A15CD120083676F /* BG_Beach@2x.png */; };
-		960C91A51A15CD120083676F /* BG_Forest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 960C91A11A15CD120083676F /* BG_Forest@2x.png */; };
-		960C91A61A15CD120083676F /* BG_Rain-Thunder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 960C91A21A15CD120083676F /* BG_Rain-Thunder@2x.png */; };
-		960C91A71A15CD120083676F /* BG_Waterflow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 960C91A31A15CD120083676F /* BG_Waterflow@2x.png */; };
-		960C91AC1A15CE8F0083676F /* beach@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 960C91A81A15CE8F0083676F /* beach@2x.png */; };
-		960C91AD1A15CE8F0083676F /* forest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 960C91A91A15CE8F0083676F /* forest@2x.png */; };
-		960C91AE1A15CE8F0083676F /* rain@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 960C91AA1A15CE8F0083676F /* rain@2x.png */; };
-		960C91AF1A15CE8F0083676F /* waterflow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 960C91AB1A15CE8F0083676F /* waterflow@2x.png */; };
 		960F2A6E18C599E700B9E6F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960F2A6D18C599E700B9E6F9 /* UIKit.framework */; };
 		960F2A7818C599E700B9E6F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 960F2A7618C599E700B9E6F9 /* InfoPlist.strings */; };
 		960F2A7A18C599E700B9E6F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 960F2A7918C599E700B9E6F9 /* main.m */; };
@@ -37,10 +25,9 @@
 		9676A06119F65AC20092B384 /* TBMoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 9676A06019F65AC20092B384 /* TBMoods.m */; };
 		9676A06419F65B6F0092B384 /* NSAvailableMoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 9676A06319F65B6F0092B384 /* NSAvailableMoods.m */; };
 		9676A06719F664070092B384 /* moodImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9676A06619F664070092B384 /* moodImages.xcassets */; };
-		9676A06919F665530092B384 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9676A06819F665530092B384 /* Icons.xcassets */; };
-		9676A07019F688C20092B384 /* mood1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9676A06B19F688C20092B384 /* mood1.mp3 */; };
-		9676A07219F688C20092B384 /* mood2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9676A06D19F688C20092B384 /* mood2.mp3 */; };
-		9676A07619F688CE0092B384 /* mood3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9676A07519F688CE0092B384 /* mood3.mp3 */; };
+		9676A07019F688C20092B384 /* Forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9676A06B19F688C20092B384 /* Forest.mp3 */; };
+		9676A07219F688C20092B384 /* Beach.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9676A06D19F688C20092B384 /* Beach.mp3 */; };
+		9676A07619F688CE0092B384 /* Rain & Thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9676A07519F688CE0092B384 /* Rain & Thunder.mp3 */; };
 		967D943A1A07B5E700130379 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 967D94391A07B5E700130379 /* Default-568h@2x.png */; };
 		967D943C1A07B67500130379 /* Audioplayer-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 967D943B1A07B67500130379 /* Audioplayer-Info.plist */; };
 		967F62B11A0396360067CC9B /* Buttons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967F62B01A0396360067CC9B /* Buttons.xcassets */; };
@@ -51,8 +38,6 @@
 		9695983718E17244009586A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960F2A6F18C599E700B9E6F9 /* Foundation.framework */; };
 		9695983918E17F2F009586A9 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9695983818E17F2F009586A9 /* CoreVideo.framework */; };
 		96A2798719FA268A00A1BEF1 /* mood4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96A2798119FA268A00A1BEF1 /* mood4.mp3 */; };
-		96A2798919FA268A00A1BEF1 /* mood5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96A2798319FA268A00A1BEF1 /* mood5.mp3 */; };
-		96A2798B19FA268A00A1BEF1 /* mood6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96A2798519FA268A00A1BEF1 /* mood6.mp3 */; };
 		96AA084518C5FE6C00A2CACF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96AA084418C5FE6C00A2CACF /* MediaPlayer.framework */; };
 		F493105B1D55F9C500A52EC8 /* EFTimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F493105A1D55F9C500A52EC8 /* EFTimePickerViewController.m */; };
 		F49310611D55F9ED00A52EC8 /* EFCircularSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = F493105E1D55F9ED00A52EC8 /* EFCircularSlider.m */; };
@@ -63,18 +48,6 @@
 		960A6AD61A04B7CE009EE639 /* Music.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Music.xcassets; sourceTree = "<group>"; };
 		960C1D531A28494E00DCA1B8 /* TBLAnimateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBLAnimateView.h; sourceTree = "<group>"; };
 		960C1D541A28494E00DCA1B8 /* TBLAnimateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBLAnimateView.m; sourceTree = "<group>"; };
-		960C91901A15C7600083676F /* beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beach.png; sourceTree = "<group>"; };
-		960C91921A15C7600083676F /* forest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forest.png; sourceTree = "<group>"; };
-		960C91941A15C7600083676F /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
-		960C91961A15C7600083676F /* waterflow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterflow.png; sourceTree = "<group>"; };
-		960C91A01A15CD120083676F /* BG_Beach@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG_Beach@2x.png"; sourceTree = "<group>"; };
-		960C91A11A15CD120083676F /* BG_Forest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG_Forest@2x.png"; sourceTree = "<group>"; };
-		960C91A21A15CD120083676F /* BG_Rain-Thunder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG_Rain-Thunder@2x.png"; sourceTree = "<group>"; };
-		960C91A31A15CD120083676F /* BG_Waterflow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG_Waterflow@2x.png"; sourceTree = "<group>"; };
-		960C91A81A15CE8F0083676F /* beach@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beach@2x.png"; sourceTree = "<group>"; };
-		960C91A91A15CE8F0083676F /* forest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forest@2x.png"; sourceTree = "<group>"; };
-		960C91AA1A15CE8F0083676F /* rain@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rain@2x.png"; sourceTree = "<group>"; };
-		960C91AB1A15CE8F0083676F /* waterflow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "waterflow@2x.png"; sourceTree = "<group>"; };
 		960F2A6918C599E700B9E6F9 /* Audioplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Audioplayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		960F2A6D18C599E700B9E6F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		960F2A6F18C599E700B9E6F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,10 +72,9 @@
 		9676A06219F65B6F0092B384 /* NSAvailableMoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAvailableMoods.h; sourceTree = "<group>"; };
 		9676A06319F65B6F0092B384 /* NSAvailableMoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAvailableMoods.m; sourceTree = "<group>"; };
 		9676A06619F664070092B384 /* moodImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = moodImages.xcassets; path = Images/moodImages.xcassets; sourceTree = "<group>"; };
-		9676A06819F665530092B384 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Icons.xcassets; path = Images/Icons.xcassets; sourceTree = "<group>"; };
-		9676A06B19F688C20092B384 /* mood1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mood1.mp3; sourceTree = "<group>"; };
-		9676A06D19F688C20092B384 /* mood2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mood2.mp3; sourceTree = "<group>"; };
-		9676A07519F688CE0092B384 /* mood3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mood3.mp3; sourceTree = "<group>"; };
+		9676A06B19F688C20092B384 /* Forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Forest.mp3; sourceTree = "<group>"; };
+		9676A06D19F688C20092B384 /* Beach.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beach.mp3; sourceTree = "<group>"; };
+		9676A07519F688CE0092B384 /* Rain & Thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rain & Thunder.mp3"; sourceTree = "<group>"; };
 		967D94391A07B5E700130379 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		967D943B1A07B67500130379 /* Audioplayer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Audioplayer-Info.plist"; path = "Images/Audioplayer-Info.plist"; sourceTree = "<group>"; };
 		967F62B01A0396360067CC9B /* Buttons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Buttons.xcassets; sourceTree = "<group>"; };
@@ -118,8 +90,6 @@
 		9695982C18E170BF009586A9 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		9695983818E17F2F009586A9 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		96A2798119FA268A00A1BEF1 /* mood4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mood4.mp3; sourceTree = "<group>"; };
-		96A2798319FA268A00A1BEF1 /* mood5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mood5.mp3; sourceTree = "<group>"; };
-		96A2798519FA268A00A1BEF1 /* mood6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mood6.mp3; sourceTree = "<group>"; };
 		96AA084418C5FE6C00A2CACF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		BF6154AF678FC3EBDE66E922 /* libPods-Audioplayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Audioplayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49310591D55F9C500A52EC8 /* EFTimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFTimePickerViewController.h; sourceTree = "<group>"; };
@@ -153,25 +123,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		960C918F1A15C7460083676F /* BGImages */ = {
-			isa = PBXGroup;
-			children = (
-				960C91A81A15CE8F0083676F /* beach@2x.png */,
-				960C91A91A15CE8F0083676F /* forest@2x.png */,
-				960C91AA1A15CE8F0083676F /* rain@2x.png */,
-				960C91AB1A15CE8F0083676F /* waterflow@2x.png */,
-				960C91A01A15CD120083676F /* BG_Beach@2x.png */,
-				960C91A11A15CD120083676F /* BG_Forest@2x.png */,
-				960C91A21A15CD120083676F /* BG_Rain-Thunder@2x.png */,
-				960C91A31A15CD120083676F /* BG_Waterflow@2x.png */,
-				960C91901A15C7600083676F /* beach.png */,
-				960C91921A15C7600083676F /* forest.png */,
-				960C91941A15C7600083676F /* rain.png */,
-				960C91961A15C7600083676F /* waterflow.png */,
-			);
-			name = BGImages;
-			sourceTree = "<group>";
-		};
 		960F2A5E18C599E700B9E6F9 = {
 			isa = PBXGroup;
 			children = (
@@ -238,12 +189,10 @@
 		9676A06A19F688B30092B384 /* media */ = {
 			isa = PBXGroup;
 			children = (
-				9676A06B19F688C20092B384 /* mood1.mp3 */,
-				9676A06D19F688C20092B384 /* mood2.mp3 */,
-				9676A07519F688CE0092B384 /* mood3.mp3 */,
+				9676A06B19F688C20092B384 /* Forest.mp3 */,
+				9676A06D19F688C20092B384 /* Beach.mp3 */,
+				9676A07519F688CE0092B384 /* Rain & Thunder.mp3 */,
 				96A2798119FA268A00A1BEF1 /* mood4.mp3 */,
-				96A2798319FA268A00A1BEF1 /* mood5.mp3 */,
-				96A2798519FA268A00A1BEF1 /* mood6.mp3 */,
 			);
 			name = media;
 			sourceTree = "<group>";
@@ -251,12 +200,10 @@
 		96A2798D19FA2E3300A1BEF1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				960C918F1A15C7460083676F /* BGImages */,
 				967F62B01A0396360067CC9B /* Buttons.xcassets */,
 				960A6AD61A04B7CE009EE639 /* Music.xcassets */,
 				9687077D1A19DCC0002E9941 /* BGImageMood.xcassets */,
 				9676A06619F664070092B384 /* moodImages.xcassets */,
-				9676A06819F665530092B384 /* Icons.xcassets */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -407,33 +354,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9687077E1A19DCC0002E9941 /* BGImageMood.xcassets in Resources */,
-				960C919E1A15C7600083676F /* waterflow.png in Resources */,
-				960C91AC1A15CE8F0083676F /* beach@2x.png in Resources */,
-				960C91A51A15CD120083676F /* BG_Forest@2x.png in Resources */,
-				960C91AD1A15CE8F0083676F /* forest@2x.png in Resources */,
-				960C919C1A15C7600083676F /* rain.png in Resources */,
 				960F2A7818C599E700B9E6F9 /* InfoPlist.strings in Resources */,
 				960F2A8718C599E700B9E6F9 /* MainStoryboard_iPhone.storyboard in Resources */,
 				960F2A8A18C599E700B9E6F9 /* MainStoryboard_iPad.storyboard in Resources */,
-				960C919A1A15C7600083676F /* forest.png in Resources */,
-				96A2798919FA268A00A1BEF1 /* mood5.mp3 in Resources */,
-				9676A07619F688CE0092B384 /* mood3.mp3 in Resources */,
-				960C91AE1A15CE8F0083676F /* rain@2x.png in Resources */,
-				96A2798B19FA268A00A1BEF1 /* mood6.mp3 in Resources */,
+				9676A07619F688CE0092B384 /* Rain & Thunder.mp3 in Resources */,
 				960A6AD71A04B7CE009EE639 /* Music.xcassets in Resources */,
 				9676A06719F664070092B384 /* moodImages.xcassets in Resources */,
-				960C91A41A15CD120083676F /* BG_Beach@2x.png in Resources */,
-				960C91A71A15CD120083676F /* BG_Waterflow@2x.png in Resources */,
 				967F62B11A0396360067CC9B /* Buttons.xcassets in Resources */,
-				960C91A61A15CD120083676F /* BG_Rain-Thunder@2x.png in Resources */,
 				96A2798719FA268A00A1BEF1 /* mood4.mp3 in Resources */,
 				967D943C1A07B67500130379 /* Audioplayer-Info.plist in Resources */,
-				9676A07219F688C20092B384 /* mood2.mp3 in Resources */,
-				960C91AF1A15CE8F0083676F /* waterflow@2x.png in Resources */,
+				9676A07219F688C20092B384 /* Beach.mp3 in Resources */,
 				967D943A1A07B5E700130379 /* Default-568h@2x.png in Resources */,
-				9676A07019F688C20092B384 /* mood1.mp3 in Resources */,
-				9676A06919F665530092B384 /* Icons.xcassets in Resources */,
-				960C91981A15C7600083676F /* beach.png in Resources */,
+				9676A07019F688C20092B384 /* Forest.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +540,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FB405DDAD0D0D0301F2EC545 /* Pods-Audioplayer.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -625,6 +558,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F938B244A5F47DF0E9E0F74C /* Pods-Audioplayer.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
