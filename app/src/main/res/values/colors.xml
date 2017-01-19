@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2F1A69</color>
+    <color name="colorPrimaryDark">#412D6E</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="seekbar">#8cc020</color>
+    <color name="songSeekbar">#ff0000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFf</color>
+    <color name="seekbar_color">#FF433D</color>
+    <color name="now_playing_bg">#2F1A69</color>
+    <color name="now_playing_bg_gradent">#412D6E</color>
+    <color name="gray_gradent">#4C3B83</color>
+    <color name="white_gradent">#BDBDBD</color>
+</resources>

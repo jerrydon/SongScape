@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/notificationbg"
+    android:layout_width="fill_parent"
+    android:background="#424242"
+    android:gravity="center"
+    android:layout_height="128.0dip">
+
+    <ImageView
+        android:id="@+id/status_bar_album_art"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:padding="25dp"
+
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/status_bar_album_art"
+        android:divider="?android:listDivider"
+        android:dividerPadding="12.0dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <ImageButton
+            android:id="@+id/status_bar_prev"
+            android:layout_width="0.0dip"
+            android:layout_height="50dp"
+            android:layout_weight="1.0"
+            android:background="?android:selectableItemBackground"
+            android:padding="10.0dip"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_previous" />
+
+        <ImageButton
+            android:id="@+id/status_bar_play"
+            android:layout_width="0.0dip"
+            android:layout_height="50dp"
+            android:layout_weight="1.0"
+            android:background="?android:selectableItemBackground"
+            android:padding="10.0dip"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_pause" />
+
+        <ImageButton
+            android:id="@+id/status_bar_next"
+            android:layout_width="0.0dip"
+            android:layout_height="50dp"
+            android:layout_weight="1.0"
+            android:background="?android:selectableItemBackground"
+            android:padding="10.0dip"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_next" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="1.0px"
+        android:layout_above="@+id/buttons"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/status_bar_album_art"
+        android:background="?android:dividerHorizontal" />
+
+
+
+    <LinearLayout
+        android:id="@+id/textarea"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_vertical"
+
+        android:layout_toRightOf="@id/status_bar_album_art"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="8.0dip">
+
+        <TextView
+            android:id="@+id/status_bar_track_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:focusable="true"
+            android:textSize="@dimen/dp_20"
+            android:text="fdsfsdfs"
+            android:textColor="@color/white"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/status_bar_artist_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:maxLines="1" />
+
+   <!--     <TextView
+            android:id="@+id/status_bar_album_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:maxLines="1" />-->
+    </LinearLayout>
+</RelativeLayout>
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="this is song title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@mipmap/ic_previous" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@mipmap/ic_play" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@mipmap/ic_next" />
+        </LinearLayout>
+    </LinearLayout>-->

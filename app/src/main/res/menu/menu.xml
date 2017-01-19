@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".search_agencies.SearchAgencyFragment">
+    <item
+        android:id="@+id/songs_list"
+        android:icon="@mipmap/ic_songs_list"
+        android:orderInCategory="100"
+        android:title="songs_list"
+        app:showAsAction="always" />
+</menu>
